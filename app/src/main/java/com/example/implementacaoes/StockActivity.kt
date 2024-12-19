@@ -208,7 +208,7 @@ class StockActivity : AppCompatActivity() {
                             ).toInt()
 
                             val constraintLayout = ConstraintLayout(this@StockActivity).apply {
-                                setBackgroundResource(R.drawable.black_border)
+                                setBackgroundResource(R.drawable.container_boder)
                                 layoutParams =
                                     LinearLayout.LayoutParams(widthInPixels, heightInPixels).apply {
                                         bottomMargin = 100
@@ -230,7 +230,7 @@ class StockActivity : AppCompatActivity() {
                             val totalTextView = TextView(this@StockActivity).apply {
                                 text = "$amount"
                                 gravity = Gravity.CENTER_HORIZONTAL
-                                setBackgroundResource(R.drawable.black_border)
+                                setBackgroundResource(R.drawable.container_boder)
                                 isClickable = true
                                 textSize = 16f
                                 setTextColor(ContextCompat.getColor(this@StockActivity, R.color.black))
