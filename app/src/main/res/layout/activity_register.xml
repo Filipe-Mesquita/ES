@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             app:layout_constraintVertical_bias="0.29000002" />
 
         <EditText
-            android:id="@+id/emailEditView"
+            android:id="@+id/emailRegistEditView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/black_border"
@@ -78,7 +78,7 @@
             app:layout_constraintVertical_bias="0.17" />
 
         <EditText
-            android:id="@+id/passwordEditView"
+            android:id="@+id/passwordRegistEditView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/black_border"
@@ -92,13 +92,48 @@
             android:textColor="@color/black"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/emailEditView"
-            app:layout_constraintStart_toStartOf="@+id/emailEditView"
+            app:layout_constraintEnd_toEndOf="@+id/emailRegistEditView"
+            app:layout_constraintStart_toStartOf="@+id/emailRegistEditView"
             app:layout_constraintTop_toBottomOf="@+id/emailTxtView"
             app:layout_constraintVertical_bias="0.26" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmar Password:"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/PasswordTxtView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/PasswordTxtView"
+            app:layout_constraintTop_toBottomOf="@+id/emailTxtView"
+            app:layout_constraintVertical_bias="0.42" />
+
+        <EditText
+            android:id="@+id/confirmPasswordRegistEditView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_border"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:hint="Inserir Password"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/passwordRegistEditView"
+            app:layout_constraintStart_toStartOf="@+id/passwordRegistEditView"
+            app:layout_constraintTop_toBottomOf="@+id/emailTxtView"
+            app:layout_constraintVertical_bias="0.51" />
+
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/registBTN"
+            android:id="@+id/registRegistBTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/loginregister_btn_bk"
@@ -109,13 +144,13 @@
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.28"
+            app:layout_constraintHorizontal_bias="0.72"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailTxtView"
-            app:layout_constraintVertical_bias="0.45" />
+            app:layout_constraintVertical_bias="0.70" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginBTN"
+            android:id="@+id/loginRegistBTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/loginregister_btn_bk"
@@ -126,9 +161,9 @@
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintHorizontal_bias="0.28"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailTxtView"
-            app:layout_constraintVertical_bias="0.45" />
+            app:layout_constraintVertical_bias="0.70" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
