@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ImplementacaoES"
         tools:targetApi="31">
         <activity
+            android:name=".StockActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
