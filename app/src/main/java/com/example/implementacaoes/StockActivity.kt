@@ -50,7 +50,7 @@ class StockActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         databaseReference =
-            FirebaseDatabase.getInstance("https://implementacaoes-default-rtdb.firebaseio.com/").reference
+            FirebaseDatabase.getInstance("https://implematacaoes-default-rtdb.europe-west1.firebasedatabase.app/").reference
 
         container = findViewById(R.id.container)
         addB = findViewById(R.id.addB)
@@ -69,6 +69,8 @@ class StockActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        loadStock()
 
         addB.setOnClickListener {
             showDialog()
@@ -120,9 +122,8 @@ class StockActivity : AppCompatActivity() {
             gravity = Gravity.CENTER
         }
         val qEdit = EditText(this).apply {
-            inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_CLASS_NUMBER
-
-                    gravity = Gravity.CENTER
+            inputType = android.text.InputType.TYPE_CLASS_TEXT
+            gravity = Gravity.CENTER
             layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
         }
         qLayout.addView(qText)
@@ -149,7 +150,7 @@ class StockActivity : AppCompatActivity() {
             } else {
                 val stockData = mapOf(
                     "Name" to name,
-                    "Amout" to amount
+                    "Amount" to amount
                 )
 
                 val user = auth.currentUser
@@ -195,7 +196,8 @@ class StockActivity : AppCompatActivity() {
                         for (matSnapshot in snapshot.children) {
                             val name = matSnapshot.child("Name").getValue(String::class.java)
                                 ?: "Desconhecido"
-                            val amount = matSnapshot.child("Amount").getValue(Long::class.java)
+                            val amount = matSnapshot.child("Amount").getValue(String::class.java)
+                                ?: "Desconhecido"
 
 
 
@@ -211,7 +213,8 @@ class StockActivity : AppCompatActivity() {
                                 setBackgroundResource(R.drawable.container_boder)
                                 layoutParams =
                                     LinearLayout.LayoutParams(widthInPixels, heightInPixels).apply {
-                                        bottomMargin = 100
+                                        topMargin = 50
+                                        bottomMargin = 50
                                     }
                                 setPadding(20, 20, 20, 20) // Define padding opcional
                             }
@@ -253,7 +256,7 @@ class StockActivity : AppCompatActivity() {
                                 gravity = Gravity.CENTER
                             }
                             val textEdit = EditText(this@StockActivity).apply {
-                                inputType = android.text.InputType.TYPE_CLASS_NUMBER
+
                                 gravity = Gravity.CENTER
                                 layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
                             }
@@ -277,8 +280,8 @@ class StockActivity : AppCompatActivity() {
                                             )
                                                 .show()
                                         } else {
-                                            val quantidade = nQuantidade.toInt()
-                                            matSnapshot.child("Amount").ref.setValue(quantidade)
+
+                                            matSnapshot.child("Amount").ref.setValue(nQuantidade)
                                                 .addOnSuccessListener {
                                                     // Mensagem de sucesso
                                                     Toast.makeText(
